@@ -101,10 +101,12 @@ if (typedRole && !reduceMotion) {
     setTimeout(type, 2000);
 }
 
-// ---------- Contact form: validate, then open the visitor's email app ----------
+// ---------- Contact form: validate, then send the message to my inbox via FormSubmit ----------
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+const submitBtn = form.querySelector('button[type="submit"]');
 const EMAIL_TO = 'joshuagboga@gmail.com';
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL_TO}`;
 
 function showError(field, show) {
     field.classList.toggle('!border-red-400', show);
@@ -113,9 +115,15 @@ function showError(field, show) {
     if (error) error.classList.toggle('hidden', !show);
 }
 
-form.addEventListener('submit', (e) => {
+function setStatus(text, isError = false) {
+    statusEl.textContent = text;
+    statusEl.classList.toggle('text-red-400', isError);
+    statusEl.classList.toggle('text-gold-300', !isError);
+}
+
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const { name, email, subject, message } = form.elements;
+    const { name, email, subject, message, _honey } = form.elements;
 
     let valid = true;
     [name, email, message].forEach((field) => {
@@ -128,12 +136,42 @@ form.addEventListener('submit', (e) => {
     });
     if (!valid) return;
 
-    const mailSubject = subject.value.trim() || `Portfolio enquiry from ${name.value.trim()}`;
-    const body = `${message.value.trim()}\n\n— ${name.value.trim()} (${email.value.trim()})`;
-    window.location.href = `mailto:${EMAIL_TO}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
+    // Bots fill in the hidden honeypot field; people never see it.
+    if (_honey.value) return;
 
-    statusEl.textContent = 'Opening your email app… Thanks for reaching out!';
-    form.reset();
+    const mailSubject = subject.value.trim() || `Portfolio enquiry from ${name.value.trim()}`;
+    const buttonLabel = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-60', 'cursor-wait');
+    submitBtn.textContent = 'Sending…';
+    setStatus('');
+
+    try {
+        const response = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+                name: name.value.trim(),
+                email: email.value.trim(),
+                message: message.value.trim(),
+                _subject: mailSubject,
+                _replyto: email.value.trim(),
+                _template: 'table',
+                _captcha: 'false',
+            }),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || String(result.success) !== 'true') throw new Error(result.message || 'Send failed');
+
+        setStatus("Thanks! Your message has been sent. I'll get back to you soon.");
+        form.reset();
+    } catch {
+        setStatus(`Sorry, your message couldn't be sent. Please email me directly at ${EMAIL_TO}.`, true);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60', 'cursor-wait');
+        submitBtn.innerHTML = buttonLabel;
+    }
 });
 
 form.querySelectorAll('.form-field').forEach((field) => {

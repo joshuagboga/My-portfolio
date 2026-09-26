@@ -390,6 +390,8 @@
                 </div>
 
                 <form id="contact-form" data-reveal class="rounded-3xl border border-white/10 bg-ink-900/80 p-6 backdrop-blur sm:p-8" novalidate>
+                    <!-- Honeypot: hidden from people, catches spam bots -->
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
                     <div class="grid gap-5 sm:grid-cols-2">
                         <div>
                             <label for="name" class="mb-2 block text-sm text-zinc-300">Name</label>
