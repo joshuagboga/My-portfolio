@@ -4,133 +4,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Joshua Gboga — Frontend Developer</title>
+    <meta name="description" content="Joshua Gboga is a frontend developer building accessible, responsive websites with HTML, Tailwind CSS and JavaScript.">
+    <meta property="og:title" content="Joshua Gboga — Frontend Developer">
+    <meta property="og:description" content="Accessible, responsive websites built with HTML, Tailwind CSS and JavaScript.">
+    <meta property="og:image" content="images/joshua-portrait.jpg">
+    <meta name="theme-color" content="#0b0b0c">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css">
+    <script>document.documentElement.classList.add('js')</script>
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="logo 1.png" alt=""></a>
-            </div>
-            <div class="nav">
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="#about">About Me</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+<body class="overflow-x-hidden">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-gold-400 focus:px-4 focus:py-2 focus:text-ink-950">Skip to content</a>
 
-                    </ul>
+    <!-- ================= HEADER ================= -->
+    <header id="site-header" class="fixed inset-x-0 top-0 z-40 border-b border-transparent transition-all duration-300">
+        <div class="mx-auto flex h-18 max-w-6xl items-center justify-between px-4 sm:px-6">
+            <a href="#top" class="flex items-center gap-2" aria-label="Joshua Gboga, back to top">
+                <img src="images/logo.png" alt="" class="h-8 w-auto invert">
+                <span class="hidden font-display text-lg font-semibold text-white sm:inline">Joshua<span class="text-gold-400">.</span></span>
+            </a>
 
-                </nav>
-                <button class="contact-btn">
-                    <a href="#contact" class="btn">Contact Me</a>
-                </button>
-            </div>
+            <nav aria-label="Main" class="hidden md:block">
+                <ul class="flex items-center gap-8">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#contact" class="btn-primary hidden py-2.5! md:inline-flex">Let's talk</a>
+
+            <button id="menu-toggle" type="button" class="grid size-11 place-items-center rounded-full border border-white/10 text-white md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path class="menu-open" d="M4 7h16M4 12h16M4 17h16" />
+                    <path class="menu-close hidden" d="M6 6l12 12M18 6L6 18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-lg md:hidden">
+            <ul class="flex flex-col gap-1 px-4 py-4">
+                <li><a href="#about" class="block rounded-lg px-3 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">About</a></li>
+                <li><a href="#skills" class="block rounded-lg px-3 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Skills</a></li>
+                <li><a href="#portfolio" class="block rounded-lg px-3 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Portfolio</a></li>
+                <li><a href="#contact" class="btn-primary mt-2 w-full">Let's talk</a></li>
+            </ul>
         </div>
     </header>
-    <main class="hero">
-        <div class="hero-text">
-            <h1>Hi, I'm <br><span class="highlight">Joshua Gboga</span></h1>
-            <!-- <p>I'm a passionate software engineer with experience in creating dynamic and responsive solutions. I
-                specialize in HTML, CSS, and JavaScript, and I'm always eager to learn new technologies and improve my
-                skills.</p> -->
-                <div class="social">
-                    <a href="mailto:joshuagboga@gmail.com">
-                    <img src="Vector.png" alt="">
 
-                    </a>
-                    <a href="https://github.com/joshuagboga">
-                    <img src="Vector (2).png" alt="">
+    <main id="main">
+        <!-- ================= HERO ================= -->
+        <section id="top" class="relative isolate overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-36">
+            <div class="pointer-events-none absolute -top-40 right-0 -z-10 size-[36rem] rounded-full bg-gold-500/10 blur-3xl" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute bottom-0 -left-40 -z-10 size-[28rem] rounded-full bg-gold-600/5 blur-3xl" aria-hidden="true"></div>
 
-                    </a>
-                    <a href="https://www.linkedin.com/in/joshuagboga">
-                    <img src="Vector (3).png" alt="">
+            <div class="mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
+                <div class="order-2 text-center lg:order-1 lg:text-left">
+                    <p data-reveal class="mb-5 inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/5 px-4 py-1.5 text-xs font-medium text-gold-300">
+                        <span class="size-2 animate-pulse rounded-full bg-green-400"></span>
+                        Available for freelance &amp; internships
+                    </p>
+                    <h1 data-reveal style="--reveal-delay:100ms" class="font-display text-5xl leading-tight font-bold text-white sm:text-6xl lg:text-7xl">
+                        Hi, I'm<br>
+                        <span class="bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 bg-clip-text text-transparent">Joshua Gboga</span>
+                    </h1>
+                    <p data-reveal style="--reveal-delay:200ms" class="mt-5 text-lg text-zinc-400 sm:text-xl">
+                        I'm a <span id="typed-role" class="font-semibold text-white">Frontend Developer</span><span class="animate-blink text-gold-400" aria-hidden="true">|</span>
+                    </p>
+                    <p data-reveal style="--reveal-delay:300ms" class="mx-auto mt-5 max-w-lg leading-relaxed text-zinc-400 lg:mx-0">
+                        I turn ideas into clean, responsive and accessible websites, with attention to every detail from the layout to the last pixel.
+                    </p>
 
-                    </a>
+                    <div data-reveal style="--reveal-delay:400ms" class="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+                        <a href="#portfolio" class="btn-primary">
+                            View my work
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                        </a>
+                        <a href="#contact" class="btn-ghost">Contact me</a>
+                    </div>
+
+                    <div data-reveal style="--reveal-delay:500ms" class="mt-10 flex justify-center gap-3 lg:justify-start">
+                        <a href="mailto:joshuagboga@gmail.com" class="social-icon" aria-label="Email">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+                        </a>
+                        <a href="https://github.com/joshuagboga" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joshuagboga" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" /></svg>
+                        </a>
+                        <a href="https://x.com/gboga_josh" target="_blank" rel="noopener" class="social-icon" aria-label="X (formerly Twitter)">
+                            <svg class="size-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.63 7.58H.49l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.41Z" /></svg>
+                        </a>
+                    </div>
                 </div>
-        </div>
-        <div class="hero-img">
-            <img src="mypfp-removebg-preview.png" alt="">
 
-        </div>
+                <div data-reveal class="order-1 mx-auto w-full max-w-xs sm:max-w-sm lg:order-2 lg:max-w-md">
+                    <div class="relative animate-float">
+                        <div class="absolute -inset-3 rounded-[2rem] border border-gold-400/40 rotate-3" aria-hidden="true"></div>
+                        <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-gold-400/20 to-transparent -rotate-2" aria-hidden="true"></div>
+                        <img src="images/joshua-portrait.jpg" alt="Portrait of Joshua Gboga in a black patterned suit" width="900" height="1124" class="relative aspect-4/5 w-full rounded-[1.75rem] object-cover object-top shadow-2xl shadow-black/60">
+                        <div class="absolute -bottom-5 -left-4 rounded-2xl border border-white/10 bg-ink-900/90 px-4 py-3 shadow-xl backdrop-blur sm:-left-8">
+                            <p class="text-2xl font-bold text-gold-400">7+</p>
+                            <p class="text-xs text-zinc-400">Live projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="mx-auto mt-20 hidden w-fit flex-col items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase hover:text-gold-300 lg:flex">
+                Scroll
+                <span class="h-10 w-px bg-gradient-to-b from-gold-400 to-transparent"></span>
+            </a>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="border-t border-white/5 bg-ink-900 py-24">
+            <div class="mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2">
+                <div data-reveal class="relative isolate mx-auto w-full max-w-md">
+                    <img src="images/joshua-seated.jpg" alt="Joshua Gboga seated on a white block against a gold backdrop" width="900" height="1125" loading="lazy" class="aspect-4/5 w-full rounded-3xl object-cover">
+                    <div class="absolute -right-3 -bottom-3 -z-10 hidden size-full rounded-3xl border border-gold-400/30 sm:block" aria-hidden="true"></div>
+                </div>
+
+                <div>
+                    <p data-reveal class="section-label">About me</p>
+                    <h2 data-reveal class="section-title">Crafting the web,<br><span class="italic text-gold-400">one detail at a time.</span></h2>
+                    <p data-reveal class="mt-6 leading-relaxed text-zinc-400">
+                        I'm a passionate software engineer who builds accessible, responsive websites and web apps. I enjoy turning ideas into clean, maintainable code and learning new technologies to solve real problems.
+                    </p>
+
+                    <dl data-reveal class="mt-8 grid gap-4 sm:grid-cols-3">
+                        <div class="rounded-2xl border border-white/10 bg-ink-800 p-5">
+                            <dt class="text-xs tracking-wider text-gold-400 uppercase">Focus</dt>
+                            <dd class="mt-2 text-sm text-white">Frontend development</dd>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-ink-800 p-5">
+                            <dt class="text-xs tracking-wider text-gold-400 uppercase">Stack</dt>
+                            <dd class="mt-2 text-sm text-white">HTML, Tailwind CSS, JavaScript</dd>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-ink-800 p-5">
+                            <dt class="text-xs tracking-wider text-gold-400 uppercase">Interests</dt>
+                            <dd class="mt-2 text-sm text-white">Performance, accessibility, design systems</dd>
+                        </div>
+                    </dl>
+
+                    <a data-reveal href="#contact" class="btn-primary mt-8">Get in touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="mx-auto max-w-2xl text-center">
+                    <p data-reveal class="section-label">What I work with</p>
+                    <h2 data-reveal class="section-title">Skills &amp; tools</h2>
+                </div>
+
+                <div class="mt-14 grid gap-6 md:grid-cols-3">
+                    <article data-reveal class="group rounded-3xl border border-white/10 bg-ink-900 p-7 transition hover:-translate-y-1 hover:border-gold-400/40">
+                        <div class="grid size-12 place-items-center rounded-2xl bg-gold-400/10 text-gold-400">
+                            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold text-white">Frontend</h3>
+                        <p class="mt-2 text-sm text-zinc-400">Semantic, accessible markup and layouts that work on every screen size.</p>
+                        <ul class="mt-5 flex flex-wrap gap-2">
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">HTML5</li>
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">CSS3</li>
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">JavaScript</li>
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">Responsive design</li>
+                        </ul>
+                    </article>
+
+                    <article data-reveal style="--reveal-delay:100ms" class="group rounded-3xl border border-white/10 bg-ink-900 p-7 transition hover:-translate-y-1 hover:border-gold-400/40">
+                        <div class="grid size-12 place-items-center rounded-2xl bg-gold-400/10 text-gold-400">
+                            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5Z" /><path d="M3 13l9 5 9-5" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold text-white">Styling &amp; frameworks</h3>
+                        <p class="mt-2 text-sm text-zinc-400">Utility-first styling with Tailwind CSS, and currently growing into React.</p>
+                        <ul class="mt-5 flex flex-wrap gap-2">
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">Tailwind CSS</li>
+                            <li class="rounded-full bg-gold-400/10 px-3 py-1 text-xs text-gold-300">Learning: React</li>
+                            <li class="rounded-full bg-gold-400/10 px-3 py-1 text-xs text-gold-300">Learning: Next.js</li>
+                        </ul>
+                    </article>
+
+                    <article data-reveal style="--reveal-delay:200ms" class="group rounded-3xl border border-white/10 bg-ink-900 p-7 transition hover:-translate-y-1 hover:border-gold-400/40">
+                        <div class="grid size-12 place-items-center rounded-2xl bg-gold-400/10 text-gold-400">
+                            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold text-white">Tooling</h3>
+                        <p class="mt-2 text-sm text-zinc-400">Version control, build tools and deploying sites to the web.</p>
+                        <ul class="mt-5 flex flex-wrap gap-2">
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">Git &amp; GitHub</li>
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">npm</li>
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">Vercel</li>
+                            <li class="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-300">Figma</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PORTFOLIO ================= -->
+        <section id="portfolio" class="border-t border-white/5 bg-ink-900 py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+                    <div>
+                        <p data-reveal class="section-label">Selected work</p>
+                        <h2 data-reveal class="section-title">Recent projects</h2>
+                    </div>
+                    <a data-reveal href="https://github.com/joshuagboga" target="_blank" rel="noopener" class="btn-ghost">More on GitHub</a>
+                </div>
+
+                <!-- Latest projects -->
+                <div class="mt-14 grid gap-8 md:grid-cols-2">
+                    <article data-reveal class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="relative aspect-16/10 overflow-hidden">
+                            <img src="images/project-ayuvista.jpg" alt="Ayuvista wellness website hero with yoga and Ayurvedic imagery" loading="lazy" class="size-full object-cover object-top transition duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 right-4 rounded-full bg-gold-400 px-3 py-1 text-xs font-semibold text-ink-950">New</span>
+                        </div>
+                        <div class="flex flex-1 flex-col p-6 sm:p-7">
+                            <h3 class="text-xl font-semibold text-white">Ayuvista: wellness website</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A multi-page site for a yoga and Ayurveda wellness brand, with home, about, pricing, FAQ, help centre and contact pages.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>Tailwind CSS</li><li aria-hidden="true">·</li><li>Multi-page</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://ayuvista-website-five.vercel.app/" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/ayuvista-website" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal style="--reveal-delay:100ms" class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="relative aspect-16/10 overflow-hidden">
+                            <img src="images/project-movie.jpg" alt="Movie website hero featuring Avatar: The Way of Water" loading="lazy" class="size-full object-cover object-top transition duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 right-4 rounded-full bg-gold-400 px-3 py-1 text-xs font-semibold text-ink-950">New</span>
+                        </div>
+                        <div class="flex flex-1 flex-col p-6 sm:p-7">
+                            <h3 class="text-xl font-semibold text-white">Movie streaming website</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A cinematic streaming site with a featured-movie hero, search bar, genre tags and a separate movie details page.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>Tailwind CSS</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://movie-website-ruby-ten.vercel.app" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/movie-website" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="relative aspect-16/10 overflow-hidden">
+                            <img src="images/project-burger.jpg" alt="Burger restaurant landing page with two burgers on an orange background" loading="lazy" class="size-full object-cover object-top transition duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 right-4 rounded-full bg-gold-400 px-3 py-1 text-xs font-semibold text-ink-950">New</span>
+                        </div>
+                        <div class="flex flex-1 flex-col p-6 sm:p-7">
+                            <h3 class="text-xl font-semibold text-white">Burger restaurant landing page</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A bold, colourful landing page for a veggie burger brand, with a curved hero, rating badge and promo sticker.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>Tailwind CSS</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://burger-website-three-beta.vercel.app/" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/burger-website" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal style="--reveal-delay:100ms" class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="relative aspect-16/10 overflow-hidden">
+                            <img src="images/project-youtube.jpg" alt="YouTube home page clone with sidebar and video grid" loading="lazy" class="size-full object-cover object-top transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-1 flex-col p-6 sm:p-7">
+                            <h3 class="text-xl font-semibold text-white">YouTube clone</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A recreation of the YouTube home feed: search bar, sidebar navigation, category chips and a responsive video grid.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>Tailwind CSS</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://youtube-one-beryl.vercel.app" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/youtube" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Earlier projects -->
+                <h3 data-reveal class="mt-20 flex items-center gap-4 text-sm font-semibold tracking-[0.2em] text-zinc-500 uppercase">
+                    Earlier projects
+                    <span class="h-px flex-1 bg-white/10"></span>
+                </h3>
+
+                <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <article data-reveal class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="aspect-16/10 overflow-hidden">
+                            <img src="images/project-start.jpg" alt="Start agency landing page with an illustrated hero" loading="lazy" class="size-full object-cover object-left transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="text-lg font-semibold text-white">Start: agency landing page</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A bright, illustrated landing page for a creative agency with a clean header and call-to-action hero.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>CSS</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://start-website-umber.vercel.app/" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/start-website" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal style="--reveal-delay:100ms" class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="aspect-16/10 overflow-hidden">
+                            <img src="images/project-agrofarm.jpg" alt="AgroFarm mobile landing page" loading="lazy" class="size-full object-cover object-[center_45%] transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="text-lg font-semibold text-white">AgroFarm website</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A mobile-first website for a smart-farming brand, with bold typography over a field backdrop.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>CSS</li><li aria-hidden="true">·</li><li>Responsive</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://agro-website-lovat.vercel.app/" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/agro-website" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal style="--reveal-delay:200ms" class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800 transition hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-2xl hover:shadow-black/40">
+                        <div class="aspect-16/10 overflow-hidden">
+                            <img src="images/project-airpods.jpg" alt="AirPods product page clone" loading="lazy" class="size-full object-cover object-top transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="text-lg font-semibold text-white">Apple AirPods page</h3>
+                            <p class="mt-2 flex-1 text-sm text-zinc-400">A recreation of Apple's AirPods product page, including the navigation, product sub-menu and hero.</p>
+                            <ul class="mt-4 flex flex-wrap gap-2 text-xs text-gold-300"><li>HTML</li><li aria-hidden="true">·</li><li>CSS</li></ul>
+                            <div class="mt-5 flex gap-3">
+                                <a href="https://apple-eight-brown.vercel.app/" target="_blank" rel="noopener" class="btn-primary px-4! py-2! text-xs!">Live demo</a>
+                                <a href="https://github.com/joshuagboga/apple" target="_blank" rel="noopener" class="btn-ghost px-4! py-2! text-xs!">Source</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="relative isolate overflow-hidden py-24">
+            <div class="pointer-events-none absolute top-1/2 left-1/2 -z-10 size-[40rem] -translate-1/2 rounded-full bg-gold-500/5 blur-3xl" aria-hidden="true"></div>
+
+            <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2">
+                <div>
+                    <p data-reveal class="section-label">Contact</p>
+                    <h2 data-reveal class="section-title">Let's build something<br><span class="italic text-gold-400">great together.</span></h2>
+                    <p data-reveal class="mt-6 max-w-md leading-relaxed text-zinc-400">
+                        Want to work together or have a question? Send a message and I'll get back to you as soon as I can.
+                    </p>
+
+                    <div data-reveal class="mt-8 space-y-4">
+                        <a href="mailto:joshuagboga@gmail.com" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-900 p-4 transition hover:border-gold-400/40">
+                            <span class="grid size-11 place-items-center rounded-xl bg-gold-400/10 text-gold-400">
+                                <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+                            </span>
+                            <span>
+                                <span class="block text-xs text-zinc-500">Email</span>
+                                <span class="text-white">joshuagboga@gmail.com</span>
+                            </span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joshuagboga" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-900 p-4 transition hover:border-gold-400/40">
+                            <span class="grid size-11 place-items-center rounded-xl bg-gold-400/10 text-gold-400">
+                                <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z" /></svg>
+                            </span>
+                            <span>
+                                <span class="block text-xs text-zinc-500">LinkedIn</span>
+                                <span class="text-white">in/joshuagboga</span>
+                            </span>
+                        </a>
+                        <a href="https://x.com/gboga_josh" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-900 p-4 transition hover:border-gold-400/40">
+                            <span class="grid size-11 place-items-center rounded-xl bg-gold-400/10 text-gold-400">
+                                <svg class="size-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.63 7.58H.49l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.41Z" /></svg>
+                            </span>
+                            <span>
+                                <span class="block text-xs text-zinc-500">X (Twitter)</span>
+                                <span class="text-white">@gboga_josh</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contact-form" data-reveal class="rounded-3xl border border-white/10 bg-ink-900/80 p-6 backdrop-blur sm:p-8" novalidate>
+                    <div class="grid gap-5 sm:grid-cols-2">
+                        <div>
+                            <label for="name" class="mb-2 block text-sm text-zinc-300">Name</label>
+                            <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required class="form-field">
+                            <p class="field-error mt-1.5 hidden text-xs text-red-400">Please enter your name.</p>
+                        </div>
+                        <div>
+                            <label for="email" class="mb-2 block text-sm text-zinc-300">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required class="form-field">
+                            <p class="field-error mt-1.5 hidden text-xs text-red-400">Please enter a valid email.</p>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <label for="subject" class="mb-2 block text-sm text-zinc-300">Subject</label>
+                        <input id="subject" name="subject" type="text" placeholder="Project enquiry" class="form-field">
+                    </div>
+                    <div class="mt-5">
+                        <label for="message" class="mb-2 block text-sm text-zinc-300">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project…" required class="form-field resize-y"></textarea>
+                        <p class="field-error mt-1.5 hidden text-xs text-red-400">Please write a message.</p>
+                    </div>
+                    <button type="submit" class="btn-primary mt-6 w-full sm:w-auto">
+                        Send message
+                        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7Z" /></svg>
+                    </button>
+                    <p id="form-status" class="mt-4 text-sm text-gold-300" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
     </main>
-    <section id="about" class="about-section">
-        <div class="container about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm a passionate software engineer who builds accessible, responsive websites and web apps. I
-                    enjoy turning ideas into clean, maintainable code and learning new technologies to solve real
-                    problems.</p>
-                <ul class="about-list">
-                    <li><strong>Focus:</strong> Frontend development </li>
-                    <li><strong>Technologies:</strong> HTML, CSS, JavaScript, modern frameworks</li>
-                    <li><strong>Interests:</strong> Performance, accessibility, and design systems</li>
-                </ul>
-                <a href="#contact" class="btn about-cta">Get in touch</a>
-            </div>
-            <div class="about-photo">
-                <img src="mypfp-removebg-preview.png" alt="Profile photo">
-            </div>
-        </div>
-    </section>
-    <section id="skills" class="skills-section">
-        <div class="container skills-content">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <h3>Frontend</h3>
-                    <p>HTML, CSS, Responsive Design</p>
-                </div>
-                <div class="skill">
-                    <h3>Frameworks</h3>
-                    <p>About to learn tailwind CSS, React, Next.js, or similar modern libraries</p>
-                </div>
-                <div class="skill">
-                    <h3>Tooling</h3>
-                    <p>About to LearnGit, npm, build tools, and testing basics</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="portfolio" class="portfolio-section">
-        <div class="container portfolio-content">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="project">
-                    <img src="Screenshot from 2026-02-27 06-37-56.png" alt="Project one screenshot">
-                    <h3>Project One</h3>
-                    <p>Brief description. <a href="https://start-website-umber.vercel.app/">Live</a> · <a href="https://github.com/joshuagboga/start-website">Source</a></p>
-                </div>
-                <div class="project">
-                    <img src="Screenshot from 2026-02-27 06-39-14.png" alt="Project two screenshot">
-                    <h3>Project Two</h3>
-                    <p>Brief description. <a href="https://agro-website-lovat.vercel.app/">Live</a> · <a href="https://github.com/joshuagboga/agro-website">Source</a></p>
-                </div>
-                <div class="project">
-                    <img src="Screenshot from 2026-02-27 06-41-40.png" alt="Project three screenshot">
-                    <h3>Project Three</h3>
-                    <p>Brief description. <a href="https://apple-eight-brown.vercel.app/">Live</a> · <a href="https://github.com/joshuagboga/apple">Source</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container contact-content">
-            <div class="contact-text">
-                <h2>Contact Me</h2>
-                <p>Want to work together or have a question? Send a message below and I'll get back to you.</p>
-            </div>
-            <form class="contact-form" action="#" method="post">
-                <input type="text" name="name" placeholder="Your name" required>
-                <input type="email" name="email" placeholder="Your email" required>
-                <textarea name="message" rows="6" placeholder="Your message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-white/5 py-10">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-zinc-500 sm:flex-row sm:px-6">
+            <p>&copy; <span id="year">2026</span> Joshua Gboga. Built with HTML, Tailwind CSS &amp; JavaScript.</p>
+            <a href="#top" class="inline-flex items-center gap-2 hover:text-gold-300">
+                Back to top
+                <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+            </a>
         </div>
-    </section>
+    </footer>
+
+    <button id="to-top" type="button" class="fixed right-5 bottom-5 z-30 grid size-12 translate-y-20 place-items-center rounded-full bg-gold-400 text-ink-950 opacity-0 shadow-lg transition duration-300 hover:bg-gold-300" aria-label="Back to top">
+        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+    </button>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
